@@ -161,10 +161,7 @@ $("#openLetter").addEventListener("click", () => {
   typeMessage(CONFIG.openingMessage);
   createHeart(window.innerWidth / 2, window.innerHeight * 0.75, 24);
 
-  // Play video with sound
-  const video = document.getElementById("loveVideo");
-  video.muted = false;
-  video.play();
+
 });
 
 function createHeart(
