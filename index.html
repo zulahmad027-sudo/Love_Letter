@@ -73,12 +73,26 @@
       </div>
 
       <div class="counter">
-        <div class="counter-item"><strong id="days">0</strong><span>Days</span></div>
-        <div class="counter-item"><strong id="hours">0</strong><span>Hours</span></div>
-        <div class="counter-item"><strong id="minutes">0</strong><span>Minutes</span></div>
-        <div class="counter-item"><strong id="seconds">0</strong><span>Seconds</span></div>
-      </div>
-    </section>
+  <div class="counter-item">
+    <strong id="days">0</strong>
+    <span>Days</span>
+  </div>
+
+  <div class="counter-item">
+    <strong id="hours">0</strong>
+    <span>Hours</span>
+  </div>
+
+  <div class="counter-item">
+    <strong id="minutes">0</strong>
+    <span>Minutes</span>
+  </div>
+
+  <div class="counter-item">
+    <strong id="seconds">0</strong>
+    <span>Seconds</span>
+  </div>
+</div>
 
     <section class="section-card">
       <div class="section-heading">
@@ -177,10 +191,18 @@
       </div>
 
       <div class="video-card">
-        <video controls playsinline preload="metadata" poster="media/our-memory.jpeg">
-          <source src="media/our-video.mp4" type="video/mp4" />
-          Your browser does not support this video.
-        </video>
+        <video
+    id="loveVideo"
+    controls
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="auto"
+    poster="media/our-memory.jpeg">
+    <source src="./media/video.mp4" type="video/mp4">
+    Your browser does not support this video.
+</video>
 
         <div class="video-note">
           <span>&hearts; Our little memory</span>

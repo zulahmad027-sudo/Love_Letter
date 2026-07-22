@@ -2,10 +2,10 @@ const CONFIG = {
   recipient: "Nurafiqah",
 
   // Change this to your own name.
-  sender: "Your Name",
+  sender: "Ahmad",
 
   // Change this to the date your story began.
-  relationshipStart: "2024-02-14T00:00:00",
+  relationshipStart: "2026-03-18T00:00:00",
 
   openingMessage:
     "Nurafiqah, some people enter a life quietly and still manage to change its entire meaning. You have become a part of my thoughts, my prayers, my calm, and the kind of future I look forward to. I hope, in every small way, you feel how deeply appreciated you are.",
@@ -160,6 +160,11 @@ $("#openLetter").addEventListener("click", () => {
 
   typeMessage(CONFIG.openingMessage);
   createHeart(window.innerWidth / 2, window.innerHeight * 0.75, 24);
+
+  // Play video with sound
+  const video = document.getElementById("loveVideo");
+  video.muted = false;
+  video.play();
 });
 
 function createHeart(
