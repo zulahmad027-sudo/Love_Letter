@@ -75,6 +75,7 @@ const CONFIG = {
 };
 
 const $ = (selector) => document.querySelector(selector);
+const bgMusic = document.getElementById("bgMusic");
 
 $("#recipientWelcome").textContent = CONFIG.recipient;
 $("#recipientHero").textContent = CONFIG.recipient;
@@ -161,7 +162,7 @@ $("#openLetter").addEventListener("click", () => {
   typeMessage(CONFIG.openingMessage);
   createHeart(window.innerWidth / 2, window.innerHeight * 0.75, 24);
 
-
+  bgMusic.play();
 });
 
 function createHeart(
