@@ -162,7 +162,11 @@ $("#openLetter").addEventListener("click", () => {
   typeMessage(CONFIG.openingMessage);
   createHeart(window.innerWidth / 2, window.innerHeight * 0.75, 24);
 
-  bgMusic.play();
+  bgMusic.volume = 0.4; // 40% volume
+bgMusic.play();
+
+musicPlaying = true;
+$("#musicButton").textContent = "❚❚";
 });
 
 function createHeart(
@@ -195,9 +199,6 @@ $("#themeButton").addEventListener("click", () => {
   document.body.classList.toggle("midnight");
 });
 
-let audioContext;
-let musicInterval;
-let musicPlaying = false;
 
 function playTone(frequency, start, duration, volume = 0.035) {
   const oscillator = audioContext.createOscillator();
@@ -230,23 +231,19 @@ function playMelody() {
   });
 }
 
+let musicPlaying = false;
+
 $("#musicButton").addEventListener("click", () => {
-  if (!audioContext) {
-    audioContext = new (window.AudioContext || window.webkitAudioContext)();
-  }
 
-  if (musicPlaying) {
-    clearInterval(musicInterval);
-    musicPlaying = false;
-    $("#musicButton").innerHTML = "&#9835;";
-  } else {
-    audioContext.resume();
-    playMelody();
+    if (musicPlaying) {
+        bgMusic.pause();
+        $("#musicButton").innerHTML = "&#9835;";
+    } else {
+        bgMusic.play();
+        $("#musicButton").textContent = "❚❚";
+    }
 
-    musicInterval = setInterval(playMelody, 3800);
-    musicPlaying = true;
-    $("#musicButton").textContent = "❚❚";
-  }
+    musicPlaying = !musicPlaying;
 });
 
 const noButton = $("#noButton");
